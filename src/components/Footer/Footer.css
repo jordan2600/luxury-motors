@@ -1,0 +1,126 @@
+.footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid #1e1e1e;
+}
+
+.footer__top {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px 50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  text-decoration: none;
+}
+
+.footer__logo-icon {
+  background-color: #ffffff;
+  color: #0a0a0a;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 5px 7px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+}
+
+.footer__logo-text {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer__brand-desc {
+  font-size: 13px;
+  color: #888888;
+  line-height: 1.7;
+  max-width: 220px;
+}
+
+.footer__col h4.footer__col-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer__col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__col ul li a {
+  font-size: 13px;
+  color: #888888;
+  transition: color 0.2s;
+}
+
+.footer__col ul li a:hover {
+  color: #ffffff;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888888;
+  transition: all 0.2s;
+}
+
+.footer__social:hover {
+  background-color: #ffffff;
+  color: #0a0a0a;
+  border-color: #ffffff;
+}
+
+.footer__bottom {
+  border-top: 1px solid #1e1e1e;
+  text-align: center;
+  padding: 20px 40px;
+}
+
+.footer__bottom p {
+  font-size: 12px;
+  color: #888888;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+    padding: 40px 20px 30px;
+    gap: 30px;
+  }
+  .footer__bottom {
+    padding: 16px 20px;
+  }
+}

@@ -1,0 +1,187 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ── Video de fondo ── */
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(1.4);
+}
+
+/* Zoom para videos con barras negras (formato no widescreen) */
+.hero__video--zoom {
+  transform: scale(1.4);
+}
+
+/* ── Overlay oscuro ── */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* ── Degradado inferior — aparece al hacer scroll ── */
+.hero__gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 50%, #0a0a0a 100%);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero__gradient.visible {
+  opacity: 1;
+}
+
+/* ── Contenido ── */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  padding-top: 80px;
+}
+
+.hero__title {
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1.1;
+}
+
+.hero__subtitle {
+  font-size: clamp(12px, 1.5vw, 16px);
+  color: #888888;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero__btn {
+  padding: 12px 30px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s;
+}
+
+.hero__btn--red {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+.hero__btn--red:hover {
+  background-color: #ffffff;
+  color: #0a0a0a;
+  border-color: #ffffff;
+}
+
+/* ── Indicadores (dots) ── */
+.hero__dots {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.hero__dot {
+  position: relative;
+  width: 40px;
+  height: 20px; /* área clickeable grande */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Barra visual dentro del botón */
+.hero__dot::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background 0.3s;
+}
+
+.hero__dot:hover::after {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.hero__dot.active::after {
+  background: transparent;
+}
+
+/* Barra de progreso animada en el activo */
+.hero__dot-progress {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3px;
+  border-radius: 9999px;
+  background: #ffffff;
+  animation: dot-progress var(--duration, 6s) linear forwards;
+  pointer-events: none;
+}
+
+@keyframes dot-progress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero__btn {
+    width: 220px;
+    text-align: center;
+  }
+}
