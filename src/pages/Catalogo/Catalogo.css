@@ -1,0 +1,142 @@
+.catalogo-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.catalogo-header {
+  text-align: center;
+  padding: 120px 20px 60px 20px; /* 120px top padding so it reaches behind the navbar */
+  background-color: #0b0f19;
+  color: white;
+}
+
+.catalogo-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.catalogo-header p {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.catalogo-container {
+  max-width: 1450px; /* Increased max-width for a wider layout */
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Filtros */
+.filtros-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.filtros-header h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.filtros-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.filtro-group {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: #888;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 12px 12px 12px 40px; /* Reduced padding back to normal */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem; /* Reduced font size */
+  background-color: #f8f9fa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input-wrapper input:focus,
+.filtro-group select:focus {
+  outline: none;
+  border-color: #0b0f19;
+  box-shadow: 0 0 0 3px rgba(11, 15, 25, 0.1);
+  background-color: white;
+}
+
+.filtro-group select {
+  width: 100%;
+  padding: 12px 35px 12px 15px; /* Reduced padding */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem; /* Reduced font size */
+  background-color: #f8f9fa;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px top 50%;
+  background-size: 10px auto;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filtros-resultados {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Grid */
+.vehiculos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  color: #666;
+  font-size: 1.1rem;
+}

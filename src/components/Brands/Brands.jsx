@@ -35,6 +35,7 @@ const brands = [
 const Brands = () => {
   return (
     <section className="brands">
+      <h2 className="brands__title">Marcas Disponibles</h2>
       <div className="brands__track-wrapper">
         <div className="brands__fade brands__fade--left" />
         <div className="brands__fade brands__fade--right" />
@@ -43,6 +44,7 @@ const Brands = () => {
           {[...brands, ...brands].map((brand, i) => (
             <div key={i} className="brands__item">
               <img src={brand.img} alt={brand.name} className="brands__logo" />
+              <span className="brands__tooltip">{brand.name}</span>
             </div>
           ))}
         </div>

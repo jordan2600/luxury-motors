@@ -10,6 +10,7 @@ import Catalogo  from './pages/Catalogo/Catalogo';
 import Servicios from './pages/Servicios/Servicios';
 import Galeria   from './pages/Galeria/Galeria';
 import Contacto  from './pages/Contacto/Contacto';
+import VehiculoDetalle from './pages/VehiculoDetalle/VehiculoDetalle';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/"          element={<Inicio />} />
         <Route path="/catalogo"  element={<Catalogo />} />
+        <Route path="/catalogo/:id" element={<VehiculoDetalle />} />
         <Route path="/servicios" element={<Servicios />} />
         <Route path="/galeria"   element={<Galeria />} />
         <Route path="/contacto"  element={<Contacto />} />

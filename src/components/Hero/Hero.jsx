@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Typewriter } from '../ui/Typewriter';
 
 import video1 from '../../assets/videoss/video1.mp4';
 import video2 from '../../assets/videoss/video2.mp4';
@@ -93,15 +94,26 @@ const Hero = () => {
           LUXURY MOTORS
         </motion.h1>
 
-        <motion.p
+        <motion.div
           className="hero__subtitle"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={0.4}
         >
-          Los carros más exclusivos del mundo
-        </motion.p>
+          <Typewriter 
+            words={[
+              "Bienvenido a Luxury Motors",
+              "Los carros más exclusivos del mundo",
+              "Encuentra tu estilo perfecto",
+              "Rendimiento sin límites"
+            ]} 
+            speed={70}
+            delayBetweenWords={2500}
+            cursor={true} 
+            cursorChar="|"
+          />
+        </motion.div>
 
         <motion.div
           className="hero__buttons"
