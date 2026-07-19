@@ -1,0 +1,217 @@
+/* ── Backdrop ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1100;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Modal ── */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1200;
+  width: 90%;
+  max-width: 560px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: #111111;
+  border: 1px solid #1e1e1e;
+  border-radius: 6px;
+  padding: 36px;
+  /* framer-motion maneja el transform, le damos el punto de origen */
+  originX: "50%";
+  originY: "50%";
+}
+
+/* ── Header ── */
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.modal__title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+}
+
+.modal__subtitle {
+  font-size: 12px;
+  color: #888888;
+  letter-spacing: 0.5px;
+}
+
+.modal__close {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #888888;
+  transition: color 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.modal__close:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.modal__close svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Formulario ── */
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.modal__field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.modal__field input,
+.modal__field select {
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 3px;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.modal__field input::placeholder {
+  color: #3a3a3a;
+}
+
+.modal__field input:focus,
+.modal__field select:focus {
+  border-color: #ffffff;
+}
+
+.modal__field select option {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* ── Botón submit ── */
+.modal__submit {
+  margin-top: 4px;
+  padding: 13px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.modal__submit:hover {
+  background: #ffffff;
+  color: #0a0a0a;
+  border-color: #ffffff;
+}
+
+/* ── WhatsApp ── */
+.modal__whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #888888;
+  font-size: 13px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  border-radius: 3px;
+  transition: color 0.2s;
+  border: 1px solid transparent;
+}
+
+.modal__whatsapp:hover {
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.2);
+}
+
+/* ── Success ── */
+.modal__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 40px 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.modal__success svg {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.modal__success h3 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.modal__success p {
+  font-size: 13px;
+  color: #888888;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .modal {
+    padding: 24px 20px;
+    margin: 0 16px;
+    max-width: calc(100% - 32px);
+  }
+
+  .modal__row {
+    grid-template-columns: 1fr;
+  }
+}
